@@ -14,7 +14,7 @@
     'website': 'https://promila.info/',
     'images' : [],
     'depends' : [],
-    'data': [],
+    'data': ['student.xml'],
     'demo': [],
     'installable': True,
     'application': True,
