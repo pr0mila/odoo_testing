@@ -13,7 +13,7 @@
     'category': 'Human Resources/Employees',
     'website': 'https://promila.info/',
     'images' : [],
-    'depends' : [],
+    'depends' : ['hr'],
     'data': [
         'ir.model.access.csv',
         #'security.xml',
