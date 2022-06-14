@@ -16,7 +16,9 @@
     'depends' : [],
     'data': [
         'ir.model.access.csv',
+        'security.xml',
         'student.xml',
+
 
 
     ],
