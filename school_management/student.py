@@ -1,11 +1,12 @@
 from datetime import datetime, time, date
 
 from odoo import fields, models
+from odoo.fields import Date
 
 
 def _check_dates(dob):
-    today = date.today()
-    if today <= today:
+    today = Date.today()
+    if dob <= today:
         return dob
     else:
         return today
@@ -27,7 +28,9 @@ class Student(models.Model):
                          "The User ID must be unique, this one is already assigned to another user."),
 
                         ]
-    _constraints = [(_check_dates(dob), 'Error ! Date must be less than Current Date')]
+
+
+#  _constraints = [(_check_dates(dob), 'Error ! Date must be less than Current Date')]
 
 
 class Class(models.Model):
