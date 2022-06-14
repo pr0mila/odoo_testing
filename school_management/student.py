@@ -1,15 +1,6 @@
-
-from datetime import datetime, time, date
+from datetime import date
 
 from odoo import fields, models
-
-
-def _check_dates(dob):
-    today = date.today()
-    if today <= today:
-        return dob
-    else:
-        return today
 
 
 class Student(models.Model):
@@ -17,19 +8,20 @@ class Student(models.Model):
     _description = "Student information"
 
     student_name = fields.Char(string="Name", tracking=True)
-    roll = fields.Integer(string="ID")
-    dob = fields.Date(string="Birthday")
-    image = fields.Image(string="Image")
+    rollno = fields.Integer(string="ID")
+    _sql_constraints = [('user_rollno_uniq', 'unique (rollno)',
+                         "The User ID must be unique, this one is already assigned to another user.")]
+    dob = fields.Date(string="Date of Birth")
+    image = fields.binary(string="Image")
     introduction = fields.Text(string="Introduction")
 
-    _sql_constraints = [('user_roll_uniq', 'unique (roll)',
-                         "The User ID must be unique, this one is already assigned to another user."),
+    def _check_dates(dob):
+        today = date.today()
+        if today <= today:
+            return dob
+        else:
+            return today
 
-                        ]
-    _constraints = [ (_check_dates(dob), 'Error ! Date must be less than Current Date')]
-
-
-"""
-class Class(models.Model):
-class Subjects(models.Model):
-"""
+    _constraints = [
+        (_check_dates(dob), 'Error ! Start Date must be greater then Current Date')
+    ]
