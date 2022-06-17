@@ -7,9 +7,15 @@
         <field name="inherit_id" ref="hr.view_employee_form"/>
         <field name="arch" type="xml">
             <field name="coach_id" position="after">
-                <field name="teacher_name_designation" />
+                <field name="teacher_name_designation"/>
             </field>
         </field>
     </record>
+
+    <menuitem id="school_teacher_root"
+              name="Teacher"
+              action="student_action"
+
+    />
 
 </odoo>
