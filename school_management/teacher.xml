@@ -9,6 +9,9 @@
             <field name="coach_id" position="after">
                 <field name="teacher_name_designation"/>
             </field>
+             <field name="teacher_name_designation" position="after">
+                <field name="subject_name"/>
+            </field>
         </field>
     </record>
 
