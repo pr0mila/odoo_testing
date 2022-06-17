@@ -18,6 +18,7 @@
         'ir.model.access.csv',
         #'security.xml',
         'student.xml',
+        'teacher.xml'
 
 
 

@@ -31,10 +31,7 @@ class Student(models.Model):
                          "The User ID must be unique, this one is already assigned to another user."),
 
                         ]
-    #_constraints = [(_check_dates(dob), 'Error ! Date must be less than Current Date')]
-
-
-
+    # _constraints = [(_check_dates(dob), 'Error ! Date must be less than Current Date')]
 
 
 class Class(models.Model):
