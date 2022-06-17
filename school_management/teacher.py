@@ -10,4 +10,4 @@ class Teacher(models.Model):
 class Class(models.Model):
     _name = 'teacher.class'
     _description = "teacher class"
-    class_name = fields.Char(string="Title", required=True)
+    class_name = fields.Many2one("hr.employee", string="Classes")

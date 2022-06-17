@@ -43,7 +43,7 @@ class Class(models.Model):
 class Subjects(models.Model):
     _name = 'student.subject'
     _description = "student subjects"
-    subjects_name = fields.Char(string="Title", required=True)
+    subjects_name = fields.Many2one('student.detail',string="Subject")
 
 
 """

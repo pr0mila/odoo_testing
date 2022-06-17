@@ -15,9 +15,21 @@
         </field>
     </record>
 
+     <record id="teacher_action" model="ir.actions.act_window">
+        <field name="name">Teachers</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hr.employee</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first student detail!
+            </p>
+        </field>
+    </record>
+
     <menuitem id="school_teacher_root"
               name="Teacher"
-              action="student_action"
+              action="teacher_action"
 
     />
 
