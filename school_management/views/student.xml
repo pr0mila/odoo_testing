@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-
+    <!-- Form view for student model-->
     <record id="student_tree" model="ir.ui.view">
         <field name="name">student.detail.form</field>
         <field name="model">student.detail</field>
@@ -26,6 +26,7 @@
         </field>
     </record>
 
+    <!-- Tree view for student model-->
     <record id="student_form" model="ir.ui.view">
         <field name="name">student.detail.form</field>
         <field name="model">student.detail</field>
@@ -60,7 +61,7 @@
     </record>
 
 
-
+    <!-- Tree view for subject model-->
      <record id="student_form_2" model="ir.ui.view">
         <field name="name">student.subject.form</field>
         <field name="model">student.subject</field>
@@ -88,7 +89,7 @@
         </field>
     </record>
 
-    <!-- Top menu item -->
+    <!-- Action for Student -->
     <record id="student_action" model="ir.actions.act_window">
         <field name="name">Students</field>
         <field name="type">ir.actions.act_window</field>
@@ -101,6 +102,7 @@
         </field>
     </record>
 
+    <!-- Action for Subject -->
     <record id="student_action_2" model="ir.actions.act_window">
         <field name="name">Students subjects</field>
         <field name="type">ir.actions.act_window</field>
@@ -113,15 +115,12 @@
         </field>
     </record>
 
+    <!-- Top menu student -->
     <menuitem id="school_root"
               name="School"
               sequence="10"/>
 
-    <menuitem id="school_student_root"
-              name="Students detail"
-              parent="school_root"
-              sequence="10"
-    />
+    <!-- submenu for student detail and subject -->
     <menuitem id="school_student_root"
               name="Students detail"
               parent="school_root"

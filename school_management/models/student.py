@@ -15,6 +15,7 @@ def _check_dates(dob):
         d1
 
 
+# model for student
 class Student(models.Model):
     _name = "student.detail"
     _description = "Student information"
@@ -34,6 +35,8 @@ class Student(models.Model):
     # _constraints = [(_check_dates(dob), 'Error ! Date must be less than Current Date')]
 
 
+# studen associated with Class and subject model
+
 class Class(models.Model):
     _name = 'student.class'
     _description = "student class"
@@ -43,7 +46,7 @@ class Class(models.Model):
 class Subjects(models.Model):
     _name = 'student.subject'
     _description = "student subjects"
-    subjects_name = fields.Many2one('student.detail',string="Subject")
+    subjects_name = fields.Many2one('student.detail', string="Subject")
 
 
 """

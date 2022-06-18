@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-
+    <!-- inherited model view, added filed after coach_id -->
     <record id="view_order_form_inherit" model="ir.ui.view">
         <field name="name">hr.employee.inherited</field>
         <field name="model">hr.employee</field>
@@ -14,7 +14,7 @@
             </field>
         </field>
     </record>
-
+    <!-- action for teacher -->
      <record id="teacher_action" model="ir.actions.act_window">
         <field name="name">Teachers</field>
         <field name="type">ir.actions.act_window</field>
@@ -26,7 +26,7 @@
             </p>
         </field>
     </record>
-
+    <!-- Menu for teacher -->
     <menuitem id="school_teacher_root"
               name="Teacher"
               action="teacher_action"
