@@ -59,6 +59,8 @@
         </field>
     </record>
 
+
+
      <record id="student_form_2" model="ir.ui.view">
         <field name="name">student.subject.form</field>
         <field name="model">student.subject</field>

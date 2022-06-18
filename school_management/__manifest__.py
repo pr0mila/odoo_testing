@@ -15,10 +15,10 @@
     'images' : [],
     'depends' : ['hr'],
     'data': [
-        'ir.model.access.csv',
-        #'security.xml',
-        'student.xml',
-        'teacher.xml'
+        'security/ir.model.access.csv',
+        'security/security.xml',
+        'views/student.xml',
+        'views/teacher.xml'
 
 
 
