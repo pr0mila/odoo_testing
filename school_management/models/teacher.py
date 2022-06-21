@@ -5,6 +5,7 @@ from odoo import fields, models
 
 class Teacher(models.Model):
     _inherit = "hr.employee"
+
     teacher_name_designation = fields.Char(string="Designation")
     class_name = fields.One2many('teacher.class', 'name', string="Subjects")
 
@@ -13,4 +14,4 @@ class Teacher(models.Model):
 class Class(models.Model):
     _name = 'teacher.class'
     _description = "teacher class"
-    name = fields.Char(string="Classes")
+    name = fields.Many2one("hr.employee",string="Classes")
