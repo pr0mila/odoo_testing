@@ -1,21 +1,13 @@
+import self as self
 from dateutil import parser
 from datetime import datetime, time, date
+
+from pkg_resources import _
+
 from odoo.tools import DEFAULT_SERVER_DATETIME_FORMAT, DEFAULT_SERVER_DATE_FORMAT
 
-from odoo import fields, models
+from odoo import fields, models, api
 from odoo.fields import Date
-
-
-
-
-
-def _check_dates(dob):
-    d1 = datetime.strptime(str(dob), "%Y/%m/%d").date()
-    d2 = date.today()
-    if d1 > d2:
-        return d2
-    else:
-        d1
 
 
 # model for student
@@ -35,10 +27,26 @@ class Student(models.Model):
                          "The User ID must be unique, this one is already assigned to another user."),
 
                         ]
-    # _constraints = [(_check_dates(dob), 'Error ! Date must be less than Current Date')]
+
+    @api.onchange('dob')
+    def _onchange_dob(self):
+        result = {}
+        d2 = date.today()
+        print(self.dob)
+        print(d2)
+        if self.dob:
+            if self.dob > d2:
+                result['warning'] = {'title': _('Warning'), 'message': _(
+                    'The Product Unit of Measure you chose has a different category than in the product form.')}
+
+        return result
+
+
+# _constraints = [(_check_dates(dob), 'Error ! Date must be less than Current Date')]
 
 
 # studen associated with Class and subject model
+
 
 class Class(models.Model):
     _name = 'student.class'
@@ -46,7 +54,6 @@ class Class(models.Model):
 
     name = fields.Char(string="Name")
     id = fields.Integer(string="id")
-
 
 
 class Subjects(models.Model):
