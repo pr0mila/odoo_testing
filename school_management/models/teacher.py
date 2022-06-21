@@ -6,7 +6,7 @@ from odoo import fields, models
 class Teacher(models.Model):
     _inherit = "hr.employee"
     teacher_name_designation = fields.Char(string="Designation")
-    class_name = fields.Many2many('teacher.class', 'class_name', string="Classes")
+    class_name = fields.One2many('teacher.class', 'name', string="Subjects")
 
 
 # teacher associated model Class

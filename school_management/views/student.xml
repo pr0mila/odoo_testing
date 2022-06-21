@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- Form view for student model-->
+    <!-- tree view for student model-->
     <record id="student_tree" model="ir.ui.view">
         <field name="name">student.detail.form</field>
         <field name="model">student.detail</field>
@@ -11,7 +11,7 @@
                 <field name="dob" />
                 <field name="image" />
                 <field name="class_name" />
-                <!-- <field name="subject_name" string="Subject"/>-->
+                <field name="subject_name"/>
                 <field name="introduction"/>
 
                 <!-- <sheet>
@@ -26,7 +26,7 @@
         </field>
     </record>
 
-    <!-- Tree view for student model-->
+    <!-- Form view for student model-->
     <record id="student_form" model="ir.ui.view">
         <field name="name">student.detail.form</field>
         <field name="model">student.detail</field>
@@ -56,22 +56,45 @@
         </field>
     </record>
 
+    <!-- Form view for subject model-->
+
+     <record id="student_subject_form" model="ir.ui.view">
+        <field name="name">student.subject.form</field>
+        <field name="model">student.subject</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+
+                <!-- <sheet>
+                    <group>
+                        <group>
+                        </group>
+                        <group>
+                        </group>
+                    </group>
+                </sheet> -->
+            </form>
+        </field>
+    </record>
+
 
     <!-- Tree view for subject model-->
-     <record id="student_form_2" model="ir.ui.view">
+     <record id="student_tree_2" model="ir.ui.view">
         <field name="name">student.subject.form</field>
         <field name="model">student.subject</field>
         <field name="arch" type="xml">
 
-                <sheet>
-                    <group>
 
                             <tree>
                                 <field name="name" />
                             </tree>
 
-                    </group>
-                </sheet>
+
+
 
                 <!-- <sheet>
                     <group>
@@ -84,6 +107,9 @@
 
         </field>
     </record>
+
+
+
 
     <!-- Action for Student -->
     <record id="student_action" model="ir.actions.act_window">

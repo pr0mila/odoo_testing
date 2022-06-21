@@ -28,8 +28,8 @@ class Student(models.Model):
     dob = fields.Date(string="Birthday")
     image = fields.Image(string="Image")
     introduction = fields.Text(string="Introduction")
-    class_name = fields.Many2one('student.class')
-    subject_name = fields.Many2many('student.subject', 'name', string="Subjects",   index=True)
+    class_name = fields.Many2one(comodel_name='student.class')
+    subject_name = fields.Many2many('student.subject')
 
     _sql_constraints = [('user_roll_uniq', 'unique (roll)',
                          "The User ID must be unique, this one is already assigned to another user."),
@@ -46,6 +46,7 @@ class Class(models.Model):
 
     name = fields.Char(string="Name")
     id = fields.Integer(string="id")
+
 
 
 class Subjects(models.Model):
