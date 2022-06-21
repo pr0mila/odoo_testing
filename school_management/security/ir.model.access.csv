@@ -1,2 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_student_detail,account.student.detail,model_student_detail,,1,1,1,1
+access_student_subject,account.student.subject,model_student_subject,,1,1,1,1
+access_student_class,account.student.class,model_student_class,,1,1,1,1

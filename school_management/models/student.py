@@ -20,13 +20,13 @@ class Student(models.Model):
     _name = "student.detail"
     _description = "Student information"
 
-    student_name = fields.Char(string="Name", tracking=True)
+    name = fields.Char(string="Name")
     roll = fields.Integer(string="ID")
     dob = fields.Date(string="Birthday")
     image = fields.Image(string="Image")
     introduction = fields.Text(string="Introduction")
     class_name = fields.Many2one('student.class')
-    subject_name = fields.One2many('student.subject', 'subjects_name', string="Subjects")
+    subject_name = fields.One2many('student.subject', 'name', string="Subjects")
 
     _sql_constraints = [('user_roll_uniq', 'unique (roll)',
                          "The User ID must be unique, this one is already assigned to another user."),
@@ -40,13 +40,15 @@ class Student(models.Model):
 class Class(models.Model):
     _name = 'student.class'
     _description = "student class"
-    class_name = fields.Char(string="Title", required=True)
+
+    name = fields.Char(string="Name")
 
 
 class Subjects(models.Model):
     _name = 'student.subject'
     _description = "student subjects"
-    subjects_name = fields.Many2one('student.detail', string="Subject")
+
+    name = fields.Char(string="Name")
 
 
 """

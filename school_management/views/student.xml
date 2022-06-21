@@ -6,13 +6,13 @@
         <field name="model">student.detail</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="student_name" string="Name"/>
-                <field name="roll" string="Roll"/>
-                <field name="dob" string="Birthday"/>
-                <field name="image" string="Image"/>
-                <field name="class_name" string="Class"/>
+                <field name="name" />
+                <field name="roll" />
+                <field name="dob" />
+                <field name="image" />
+                <field name="class_name" />
                 <!-- <field name="subject_name" string="Subject"/>-->
-                <field name="introduction" string="Introduction"/>
+                <field name="introduction"/>
 
                 <!-- <sheet>
                     <group>
@@ -34,17 +34,13 @@
             <form>
                 <sheet>
                     <group>
-                        <field name="student_name" string="Name"/>
-                        <field name="roll" string="Roll"/>
-                        <field name="dob" string="Birthday"/>
-                        <field name="image" string="Image"/>
-                        <field name="class_name" string="Class"/>
-                        <field name="subject_name">
-                            <tree editable="bottom">
-                                <field name="subjects_name" string="Subjects"/>
-                            </tree>
-                        </field>
-                        <field name="introduction" string="Introduction"/>
+                        <field name="name"/>
+                        <field name="roll"/>
+                        <field name="dob"/>
+                        <field name="image"/>
+                        <field name="class_name"/>
+                        <field name="subject_name"/>
+                        <field name="introduction"/>
                     </group>
                 </sheet>
 
@@ -70,8 +66,8 @@
                 <sheet>
                     <group>
 
-                            <tree editable="bottom">
-                                <field name="subjects_name" string="Subjects"/>
+                            <tree>
+                                <field name="name" />
                             </tree>
 
                     </group>
