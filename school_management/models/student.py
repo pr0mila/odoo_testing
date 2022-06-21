@@ -6,6 +6,9 @@ from odoo import fields, models
 from odoo.fields import Date
 
 
+
+
+
 def _check_dates(dob):
     d1 = datetime.strptime(str(dob), "%Y/%m/%d").date()
     d2 = date.today()
@@ -26,7 +29,7 @@ class Student(models.Model):
     image = fields.Image(string="Image")
     introduction = fields.Text(string="Introduction")
     class_name = fields.Many2one('student.class')
-    subject_name = fields.One2many('student.subject', 'name', string="Subjects")
+    subject_name = fields.Many2many('student.subject', 'name', string="Subjects",   index=True)
 
     _sql_constraints = [('user_roll_uniq', 'unique (roll)',
                          "The User ID must be unique, this one is already assigned to another user."),
@@ -42,6 +45,7 @@ class Class(models.Model):
     _description = "student class"
 
     name = fields.Char(string="Name")
+    id = fields.Integer(string="id")
 
 
 class Subjects(models.Model):

@@ -111,6 +111,19 @@
         </field>
     </record>
 
+     <!-- Action for Class -->
+    <record id="student_action_3" model="ir.actions.act_window">
+        <field name="name">Students classes</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">student.class</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first student detail!
+            </p>
+        </field>
+    </record>
+
     <!-- Top menu student -->
     <menuitem id="school_root"
               name="School"
@@ -126,6 +139,11 @@
               name="Students subjects"
               parent="school_root"
               action="student_action_2"
+              sequence="10"/>
+     <menuitem id="school_student_root3"
+              name="Students classes"
+              parent="school_root"
+              action="student_action_3"
               sequence="10"/>
 
     <!--
