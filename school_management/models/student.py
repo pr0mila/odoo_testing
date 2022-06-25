@@ -20,7 +20,7 @@ class Student(models.Model):
     dob = fields.Date(string="Birthday")
     image = fields.Image(string="Image")
     introduction = fields.Text(string="Introduction")
-    class_name = fields.Many2one(comodel_name='student.class')
+    class_name = fields.Many2one('student.class')
     subject_name = fields.Many2many('student.subject')
 
     _sql_constraints = [('user_roll_uniq', 'unique (roll)',
@@ -53,7 +53,7 @@ class Class(models.Model):
     _description = "student class"
 
     name = fields.Char(string="Name")
-    id = fields.Integer(string="id")
+    student_ids = fields.One2many('student.detail','class_name')
 
 
 class Subjects(models.Model):
@@ -61,9 +61,9 @@ class Subjects(models.Model):
     _description = "student subjects"
 
     name = fields.Char(string="Name")
+    student_sub_ids = fields.Many2one('student.detail','subject_name')
 
 
 """
-
 class Subjects(models.Model):
 """
